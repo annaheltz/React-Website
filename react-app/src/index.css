@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+#content {
+  display: flex;
+}
+
+#tabs {
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+#tabs ul {
+  list-style: none;
+  padding: 0;
+}
+
+#tabs li {
+  margin-bottom: 10px;
+}
+
+#main-content {
+  flex: 3;
+  padding: 20px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content .column-container {
+  display: flex;
+  justify-content: space-between; /* Columns are spaced evenly */
+}
+
+.column-item {
+  flex: 0 1 calc(30% - 10px); /* Columns take 30% width with 10px spacing */
+  margin: 0 5px; /* Adjust spacing between columns */
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.column-item-stock {
+  flex: 0 1 calc(48% - 10px); /* Columns take 30% width with 10px spacing */
+  margin: 0 5px; /* Adjust spacing between columns */
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+img {
+  width: 100%; /* Make the image width 100% of the figure, which is 100% of the column */
+  height: auto; /* Maintain the image's aspect ratio */
+}

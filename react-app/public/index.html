@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Work</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div id="header">
+        <h1>Daily to Do</h1>
+        <div id="dateTimeDisplay"></div>
+    </div>
+    <div id="content">
+        <div id="tabs">
+            <ul>
+                <li><a href="#tab1">Daily Readings</a></li>
+                <li><a href="#tab2">Word Games</a></li>
+                <li><a href="#tab3">Stocks</a></li>
+                <li><a href="#tab4">Other</a></li>
+            </ul>
+        </div>
+        <div id="main-content">
+            <div class="tab-content" id="tab1">
+                <div class="column-container">
+                    <div class="column-item">
+                        <h2>Poem of the Day</h2>
+                        <div id="poem_otd"></div> <!-- This is where your React component will be rendered -->
+                    </div>
+                    <div class="column-item">
+                        <h2>Word of the Day</h2>
+                        <div id="word_otd"></div> <!-- This is where your React component will be rendered -->
+                    </div>
+                    <div class="column-item">
+                        <h2>Bible Verse of the Day</h2>
+                        <div id="bible_verse_otd"></div> <!-- This is where your React component will be rendered -->
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="tab2">
+                <div class="column-container">
+                    <div class="column-item">
+                        <h2>Wordle</h2>
+                        <a href="https://www.nytimes.com/games/wordle/index.html">Play Wordle</a>
+                    </div>
+                    <div class="column-item">
+                        <h2>Connections</h2>
+                        <a href="https://www.nytimes.com/games/connections">Play Connections</a>
+                    </div>
+                    <div class="column-item">
+                        <h2>Mini Crossword</h2>
+                        <a href="https://www.nytimes.com/crosswords/game/mini">Play Mini Crossword</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="tab3">
+                <div class="column-container">
+                    <div class="column-item-stock">
+                        <h2>AMZN</h2>
+                        <br>
+                        <div id = "AMZN"></div>
+                    </div>
+                    <div class="column-item-stock">
+                        <h2>TSLA</h2>
+                        <br>
+                        <div id = "TSLA"></div>
+                    </div>
+                </div>
+                <br>
+                <div class="column-container">
+                    <div class="column-item-stock">
+                        <h2>VOO</h2>
+                        <br>
+                        <div id = "VOO"></div>
+                    </div>
+                    <div class="column-item-stock">
+                        <h2>AMD</h2>
+                        <br>
+                        <div id = "AMD"></div>
+                    </div>
+                </div>
+                <br>
+                <div class="column-container">
+                    <div class="column-item-stock">
+                        <h2>QQQ</h2>
+                        <br>
+                        <div id = "QQQ"></div>
+                    </div>
+                    <div class="column-item-stock">
+                        <h2>sQQQ</h2>
+                        <br>
+                        <div id = "sQQQ"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="tab4">
+                <div class="column-container">
+                  <div class="column-item-stock">
+                    <h2>Duolingo</h2>
+                    <a href="https://www.duolingo.com/">Duolingo</a>
+                </div>
+                <div class="column-item-stock">
+                    <h2>Chess</h2>
+                    <a href="https://www.chess.com/">Chess</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('#tabs ul li a');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Hide all tab contents
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Show the clicked tab content
+                tabContents[index].classList.add('active');
+            });
+        });
+
+        // Show the first tab by default
+        tabContents[0].classList.add('active');
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+This is a website I made to do daily tasks as well as monitor stocks. It utilizing react and multiple API calls to monitor the stocks and update the graphs and price every 2 minutes.
